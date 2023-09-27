@@ -12,7 +12,7 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
         >
           Hide
         </button>
-        
+        <p>{description}</p>
         </div>
       ) : (
         <button
@@ -22,7 +22,7 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
           Show
         </button>
       )}
-      {isVisible && <p>{description}</p>}
+      {/* {isVisible && <p>{description}</p>} */}
     </div>
   );
 };

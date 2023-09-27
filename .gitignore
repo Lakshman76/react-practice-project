@@ -6,4 +6,6 @@ dist/
 
 .parcel-cache/
 
-src/
+src/components
+
+src/utils

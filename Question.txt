@@ -1,0 +1,21 @@
+Q1. What is emmet?
+Ans - 
+Emmet is a ppowerful tool or plugin for text editors (Vs code, sublime text etc) that helps us to write code very fast and in efficient way.
+It allows us to use shorthand abbreviations called "Emmet abbriviation" or "emmet shortcut".
+
+e.g- 
+when we tap (!) in HTML file then emmet provide whole boilerplate of HTML. And we can do lots of such type of stuff.
+
+
+
+Q2. Difference between a Library and Framework?
+Ans- 
+(i) A library is a collection of pre-written code that provides specific functionality and can be used by developers to perform certain tasks. Libraries are typically standalone and do not enforce a specific application structure. They offer flexibility and allow developers to choose which components or functionalities to include in their code. Some examples of libraries I have worked with are:
+
+React.js: React.js is a JavaScript library for building user interfaces. It allows developers to create reusable UI components and provides tools for managing component state and handling UI updates efficiently.
+
+(ii) A framework, on the other hand, is a more comprehensive tool that provides a structured approach for building applications. Frameworks define the overall architecture, flow, and conventions that developers need to follow. They often come with predefined rules and patterns to ensure consistency across the application. Some frameworks I have experience with include:
+
+Express.js: Express.js is a popular Node.js web application framework. It simplifies the process of building server-side applications by providing a minimalistic, flexible, and easy-to-use framework for handling routing, middleware, and request handling.
+
+

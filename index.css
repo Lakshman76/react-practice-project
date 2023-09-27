@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Designing empty box */
+/* .empty-container{
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.empty-box{
+    width: 250px;
+    height: 350px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5%;
+    background-color: #eeeded;
+} */
+
+/* Designing heading */
+/* header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px;
+    border: 2px solid black;
+}
+.title img{
+    width: 100px;
+}
+.nav-list-item ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+} */
+
+/* designing body */
+/* main{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.card{
+    width: 222px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+.card img{
+    width: 100%;
+} */

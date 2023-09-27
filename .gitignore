@@ -5,5 +5,3 @@ package-lock.json
 dist/
 
 .parcel-cache/
-
-src/utils

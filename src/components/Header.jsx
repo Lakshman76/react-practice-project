@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import userContext from "../utils/userContext";
 
 const Logo = () => {
   return (
@@ -30,7 +31,7 @@ const NavItem = () => {
         <Link to={'/instamart'}>
           <li>instamart</li>
         </Link>
-        
+
         <Link to={'/registration'}>
           <li>Registration</li>
         </Link>
@@ -40,11 +41,12 @@ const NavItem = () => {
 };
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const {user} = useContext(userContext);
   return (
     <header className="flex justify-between items-center bg-purple-100 shadow-lg">
       <Logo />
       <NavItem />
+      <span className="font-bold text-red-900">{user.name}</span>
       {isLoggedIn ? (
         <button
           onClick={() => {

@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import ProfileFunctionalComp from "./Profile";
-import Profile from "./ProfileClass";
+// import Profile from "./ProfileClass";
 import { Component } from "react";
+import userContext from '../utils/userContext';
 
 // const About = () => {
 //     return(
@@ -25,7 +26,10 @@ class About extends Component{
         // console.log("p-Render");
         return(
             <>
-                <h1>Hello Everyone, This is About Us page</h1>
+                <h1 className="text-3xl font-bold m-3 p-2">Hello Everyone, This is About Us page</h1>
+                <userContext.Consumer>
+                    {({user}) => <h2 className="font-semibold text-xl p-2 m-2">Name: {user.name} and his email: {user.email}</h2>}
+                </userContext.Consumer>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates eum eius nesciunt esse atque repellat quasi asperiores quam quia!</p>
                 <ProfileFunctionalComp name="Lakshman"/>
             </>

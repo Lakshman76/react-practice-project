@@ -10,6 +10,7 @@ import Contact from "./components/contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import Registration from "./components/Registration";
 
 // instead of this - 
 // import Instamart from "./components/Instamart";
@@ -64,6 +65,10 @@ const appRouter = createBrowserRouter([
                 <Suspense fallback={<Shimmer/>}>
                     <Instamart />
                 </Suspense>
+            },
+            {
+                path: '/registration',
+                element: <Registration />
             }
         ]
     },

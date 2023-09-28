@@ -19,8 +19,6 @@ const NavItem = () => {
           <li>Home</li>
         </Link>
 
-        <li>Cart</li>
-
         <Link to={"/about"}>
           <li>About</li>
         </Link>
@@ -28,8 +26,13 @@ const NavItem = () => {
         <Link to={'/contact'}>
           <li>Contact</li>
         </Link>
+
         <Link to={'/instamart'}>
           <li>instamart</li>
+        </Link>
+        
+        <Link to={'/registration'}>
+          <li>Registration</li>
         </Link>
       </ul>
     </div>

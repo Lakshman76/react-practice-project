@@ -4,7 +4,7 @@ import { API_URL } from "../config";
 const useAllRestaurant = () => {
 
   const [allRestaurant, setAllRestaurant] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  // const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   useEffect(() => {
     getRestaurant();
@@ -23,15 +23,15 @@ const useAllRestaurant = () => {
         jsonData?.data?.success?.cards[1]?.gridWidget?.gridElements
           ?.infoWithStyle?.restaurants
       );
-      setFilteredRestaurants(
-        jsonData?.data?.success?.cards[1]?.gridWidget?.gridElements
-          ?.infoWithStyle?.restaurants
-      );
+      // setFilteredRestaurants(
+      //   jsonData?.data?.success?.cards[1]?.gridWidget?.gridElements
+      //     ?.infoWithStyle?.restaurants
+      // );
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
-  return {allRestaurant, filteredRestaurants};
+  return allRestaurant;
 }
 
 export default useAllRestaurant;

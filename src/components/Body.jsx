@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
@@ -9,8 +9,9 @@ import useCheckOnline from "../utils/useCheckOnline";
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
 
-  const { allRestaurant, filteredRestaurants } = useAllRestaurant();
-  // const filteredRestaurants = useAllRestaurant();
+  const allRestaurant = useAllRestaurant();
+
+  const [filteredRestaurants, setFilteredRestaurants] = useState(allRestaurant);
 
   console.log("render");
 
@@ -21,9 +22,15 @@ const Body = () => {
   }
 
   // Don't render component (early return)
-  if (!allRestaurant) return null;
+  // if (!allRestaurant) return null;
 
   // if(filteredRestaurants?.length === 0) return <h1>No Restaurant found!</h1>
+
+  useEffect(() => {
+    if(allRestaurant){
+      setFilteredRestaurants(allRestaurant);
+    }
+  },[allRestaurant])
 
   return allRestaurant?.length === 0 ? (
     <Shimmer />
@@ -44,6 +51,7 @@ const Body = () => {
           onClick={() => {
             const data = filterData(searchInput, allRestaurant);
             console.log(data);
+            setFilteredRestaurants(data);
           }}
         >
           Search

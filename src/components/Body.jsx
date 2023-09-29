@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useAllRestaurant from "../utils/useAllRestaurant";
 import useCheckOnline from "../utils/useCheckOnline";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -12,6 +13,8 @@ const Body = () => {
   const allRestaurant = useAllRestaurant();
 
   const [filteredRestaurants, setFilteredRestaurants] = useState(allRestaurant);
+
+  const { user, setUser } = useContext(userContext);
 
   console.log("render");
 
@@ -27,10 +30,10 @@ const Body = () => {
   // if(filteredRestaurants?.length === 0) return <h1>No Restaurant found!</h1>
 
   useEffect(() => {
-    if(allRestaurant){
+    if (allRestaurant) {
       setFilteredRestaurants(allRestaurant);
     }
-  },[allRestaurant])
+  }, [allRestaurant]);
 
   return allRestaurant?.length === 0 ? (
     <Shimmer />
@@ -56,6 +59,26 @@ const Body = () => {
         >
           Search
         </button>
+        <input
+          className="p-2 m-2 focus:bg-green-200"
+          value={user.name}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              name: e.target.value,
+            })
+          }
+        />
+        <input
+          className="p-2 m-2 focus:bg-green-200"
+          value={user.email}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              email: e.target.value,
+            })
+          }
+        />
       </div>
       <div className="flex flex-wrap">
         {/* write logic here for No Restaurant found! */}

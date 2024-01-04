@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useAllRestaurant from "../utils/useAllRestaurant";
 import useCheckOnline from "../utils/useCheckOnline";
-import userContext from "../utils/userContext";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -14,7 +14,7 @@ const Body = () => {
 
   const [filteredRestaurants, setFilteredRestaurants] = useState(allRestaurant);
 
-  const { user, setUser } = useContext(userContext);
+  const { user, setUser } = useContext(UserContext);
 
   console.log("render");
 

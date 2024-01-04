@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
-const userContext = createContext({
+const UserContext = createContext({
     user:{
         name: "Dummy Name",
         email: "dummy@gmail.com"
     }
 })
-userContext.displayName = 'userContext';
+UserContext.displayName = 'userContext'; // used to identify each context in profiler
 
-export default userContext;
+export default UserContext;

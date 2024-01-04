@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import Error from "./components/Error";
@@ -11,7 +11,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 import Registration from "./components/Registration";
-import userContext from "./utils/userContext";
+import UserContext from "./utils/userContext";
 
 // instead of this -
 // import Instamart from "./components/Instamart";
@@ -28,7 +28,7 @@ const AppLayout = () => {
     email: "laksh@gmail.com",
   });
   return (
-    <userContext.Provider
+    <UserContext.Provider
       value={{
         user: user,
         setUser: setUser,
@@ -37,7 +37,7 @@ const AppLayout = () => {
       <Header />
       <Outlet />
       <Footer />
-    </userContext.Provider>
+    </UserContext.Provider>
   );
 };
 
@@ -70,7 +70,7 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path: "/Instamart",
+        path: "/instamart",
         element: (
           <Suspense fallback={<Shimmer />}>
             <Instamart />

@@ -12,6 +12,8 @@ import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 import Registration from "./components/Registration";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 // instead of this -
 // import Instamart from "./components/Instamart";
@@ -28,16 +30,18 @@ const AppLayout = () => {
     email: "laksh@gmail.com",
   });
   return (
-    <UserContext.Provider
-      value={{
-        user: user,
-        setUser: setUser,
-      }}
-    >
-      <Header />
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+    <Provider store={store}>
+      <UserContext.Provider
+        value={{
+          user: user,
+          setUser: setUser,
+        }}
+      >
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

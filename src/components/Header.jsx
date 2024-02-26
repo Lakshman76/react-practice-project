@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Logo = () => {
   return (
@@ -13,6 +14,7 @@ const Logo = () => {
   );
 };
 const NavItem = () => {
+  const cartItem = useSelector((store) => store.cart.items)
   return (
     <div className="nav-list-item">
       <ul className="flex gap-4">
@@ -35,6 +37,7 @@ const NavItem = () => {
         <Link to={'/registration'}>
           <li>Registration</li>
         </Link>
+        <li>cart - {cartItem.length} item</li>
       </ul>
     </div>
   );
